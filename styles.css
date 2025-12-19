@@ -2,7 +2,6 @@
    GLOBAL RESET & BASE
 ================================ */
 
-:where([class^="ri-"])::before { content: "\f3c2"; }
 
 * {
   font-family: 'Inter', sans-serif;
@@ -144,10 +143,10 @@ body {
 }
 
 /* ===============================
-   FLIP CARD (CRITICAL SECTION)
+   FLIP CARD (AUTH PAGE ONLY)
 ================================ */
 
-.flip-card-container {
+.auth-page .flip-card-container {
   perspective: 1200px;
   width: 100%;
   max-width: 500px;
@@ -156,7 +155,7 @@ body {
   padding: 0 1rem;
 }
 
-.flip-card {
+.auth-page .flip-card {
   position: relative;
   width: 100%;
   min-height: 500px;
@@ -165,8 +164,8 @@ body {
 }
 
 /* Faces */
-.flip-card-front,
-.flip-card-back {
+.auth-page .flip-card-front,
+.auth-page .flip-card-back {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
@@ -174,26 +173,26 @@ body {
 }
 
 /* Back face */
-.flip-card-back {
+.auth-page .flip-card-back {
   transform: rotateY(180deg);
 }
 
 /* Pointer control */
-.flip-card-front { pointer-events: auto; }
-.flip-card-back  { pointer-events: none; }
+.auth-page .flip-card-front { pointer-events: auto; }
+.auth-page .flip-card-back  { pointer-events: none; }
 
-.flip-card.flipped {
+.auth-page .flip-card.flipped {
   transform: rotateY(180deg);
 }
 
-.flip-card.flipped .flip-card-front { pointer-events: none; }
-.flip-card.flipped .flip-card-back  { pointer-events: auto; }
+.auth-page .flip-card.flipped .flip-card-front { pointer-events: none; }
+.auth-page .flip-card.flipped .flip-card-back  { pointer-events: auto; }
 
 /* ===============================
    AUTH FORM ENTRY ANIMATION
 ================================ */
 
-.auth-form {
+.auth-page .auth-form {
   animation: fade-in .4s ease;
 }
 
@@ -207,3 +206,31 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ===============================
+   PAGE-SPECIFIC POINTER EVENTS
+================================ */
+
+.index-page .light-beam,
+.index-page .mood-orb::before,
+.index-page .obsidian-gradient::before {
+  pointer-events: none !important;
+}
+
+/* Ensure interactive elements are always clickable */
+.index-page .mood-option,
+.index-page .path-button,
+.index-page .destiny-button,
+.index-page button {
+  pointer-events: auto !important;
+}
+
+.auth-page .flip-card,
+.auth-page .glass-panel,
+.auth-page button,
+.auth-page a,
+.auth-page input,
+.auth-page label {
+  pointer-events: auto;
+}
+  

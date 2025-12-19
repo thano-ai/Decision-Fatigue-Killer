@@ -1,0 +1,418 @@
+/* ===============================
+   INDEX PAGE SPECIFIC STYLES
+   (Separated from auth styles)
+================================ */
+
+/* ===============================
+   BUTTONS & INTERACTIVE ELEMENTS
+================================ */
+
+.pill-button {
+  background: rgba(0,31,61,.5);
+  border: 1px solid rgba(237,152,95,.3);
+  border-radius: 50px;
+  padding: 12px 24px;
+  color: #E6E6E6;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all .3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.pill-button:hover,
+.pill-button.active {
+  background: rgba(237,152,95,.2);
+  border-color: rgba(237,152,95,.5);
+  color: #E6E6E6;
+  box-shadow: 0 4px 20px rgba(237,152,95,.3);
+}
+
+.login-link {
+  position: relative;
+  transition: all .3s ease;
+}
+
+.login-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #ED985F, #F7B980);
+  transition: width .3s ease;
+}
+
+.login-link:hover {
+  color: #F7B980;
+  transform: translateY(-1px);
+}
+
+.login-link:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   MOOD SELECTION
+================================ */
+
+.mood-orb-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 3.5rem 0;
+  padding-bottom: 1.5rem;
+}
+
+.mood-orb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  transition: all .6s cubic-bezier(.34,1.56,.64,1);
+  cursor: pointer;
+}
+
+.mood-orb::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, currentColor 0%, transparent 70%);
+  opacity: .3;
+  filter: blur(20px);
+  transition: all .6s ease;
+  pointer-events: none;
+}
+
+.mood-orb.melancholy {
+  background: radial-gradient(circle at 30% 30%, #001F3D 0%, #003366 50%, #001F3D 100%);
+  box-shadow: 0 0 40px rgba(0,31,61,.5), inset 0 0 60px rgba(0,51,102,.3);
+}
+
+.mood-orb.high-energy {
+  background: radial-gradient(circle at 30% 30%, #ED985F 0%, #F7B980 50%, #ED985F 100%);
+  box-shadow: 0 0 40px rgba(237,152,95,.6), inset 0 0 60px rgba(247,185,128,.4);
+}
+
+.mood-orb.zen {
+  background: radial-gradient(circle at 30% 30%, #4A7C59 0%, #6B9B7A 50%, #4A7C59 100%);
+  box-shadow: 0 0 40px rgba(74,124,89,.5), inset 0 0 60px rgba(107,155,122,.3);
+}
+
+.mood-orb.curious {
+  background: radial-gradient(circle at 30% 30%, #7B68EE 0%, #9370DB 50%, #7B68EE 100%);
+  box-shadow: 0 0 40px rgba(123,104,238,.5), inset 0 0 60px rgba(147,112,219,.3);
+}
+
+.mood-orb.thrill-seeker {
+  background: radial-gradient(circle at 30% 30%, #DC143C 0%, #FF6347 50%, #DC143C 100%);
+  box-shadow: 0 0 40px rgba(220,20,60,.6), inset 0 0 60px rgba(255,99,71,.4);
+}
+
+.mood-orb:hover {
+  transform: scale(1.1);
+}
+
+.mood-orb.active {
+  transform: scale(1.15);
+  animation: orb-pulse 2s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+  0%, 100% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.mood-orb-label {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #E6E6E6;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.mood-orb:hover .mood-orb-label,
+.mood-orb.active .mood-orb-label {
+  opacity: 1;
+}
+
+.mood-option {
+  background: rgba(0,31,61,.3);
+  border: 1px solid rgba(237,152,95,.2);
+  color: #E6E6E6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(.34,1.56,.64,1);
+  border-radius: 16px;
+  overflow: visible;
+  padding-bottom: 2rem;
+}
+
+.mood-option .mood-label {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  font-size: 12px;
+  font-weight: 400;
+  color: #E6E6E6;
+  opacity: 0;
+  transition: all .5s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+  letter-spacing: 0.5px;
+}
+
+.mood-option:hover .mood-label,
+.mood-option.active .mood-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mood-option:hover {
+  background: rgba(237,152,95,.15);
+  border-color: rgba(237,152,95,.5);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(237,152,95,.3), 0 0 20px rgba(237,152,95,.15);
+}
+
+.mood-option.active {
+  background: rgba(237,152,95,.2);
+  border-color: rgba(237,152,95,.5);
+  box-shadow: 0 0 15px rgba(237,152,95,.3), inset 0 0 10px rgba(237,152,95,.1);
+}
+
+.mood-option i {
+  transition: all .3s ease;
+}
+
+.mood-option:hover i {
+  transform: scale(1.15);
+}
+
+.mood-option.active i {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   PATH BUTTONS
+================================ */
+
+.path-button {
+  background: rgba(0,31,61,.4);
+  border: 1px solid rgba(237,152,95,.2);
+  border-radius: 20px;
+  color: #E6E6E6;
+  transition: all .3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.path-button:hover,
+.path-button.active {
+  background: rgba(237,152,95,.15);
+  border-color: rgba(237,152,95,.4);
+  color: #E6E6E6;
+  box-shadow: 0 4px 20px rgba(237,152,95,.2);
+}
+
+.path-button.active i {
+  color: #ED985F;
+}
+
+/* ===============================
+   DESTINY BUTTON
+================================ */
+
+.destiny-button {
+  background: linear-gradient(135deg, rgba(237,152,95,.2), rgba(0,31,61,.4));
+  border: 2px solid rgba(237,152,95,.5);
+  border-radius: 20px;
+  padding: 20px 40px;
+  color: #E6E6E6;
+  font-weight: 300;
+  font-size: 18px;
+  backdrop-filter: blur(20px);
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.destiny-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(230,230,230,.1), transparent);
+  transition: left .5s ease;
+  pointer-events: none;
+}
+
+.destiny-button:hover::before {
+  left: 100%;
+}
+
+.destiny-button:hover {
+  box-shadow: 0 12px 40px rgba(237,152,95,.4);
+  transform: translateY(-4px);
+  border-color: rgba(237,152,95,.7);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(237,152,95,.4), 0 0 40px rgba(237,152,95,.2);
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(237,152,95,.4), 0 0 40px rgba(237,152,95,.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(237,152,95,.6), 0 0 60px rgba(237,152,95,.3);
+  }
+}
+
+.panel-blur {
+  transition: filter .5s ease, opacity .5s ease;
+}
+
+.panel-blur.blurred {
+  filter: blur(8px);
+  opacity: .5;
+}
+
+/* ===============================
+   REVEAL ANIMATION
+================================ */
+
+.light-beam {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(237,152,95,.3) 20%, 
+    rgba(247,185,128,.5) 50%, 
+    rgba(237,152,95,.3) 80%, 
+    transparent 100%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: beam-sweep 1.5s ease-out;
+}
+
+@keyframes beam-sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.destiny-button.calculating {
+  pointer-events: none;
+}
+
+.destiny-button.calculating .button-text {
+  display: none;
+}
+
+.destiny-button.calculating .spinner {
+  display: inline-block;
+}
+
+.button-text {
+  display: inline;
+}
+
+.spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(230,230,230,.3);
+  border-top-color: #ED985F;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.calculating-text {
+  display: none;
+}
+
+.destiny-button.calculating .calculating-text {
+  display: inline;
+}
+
+.result-card.spring-in {
+  animation: spring-in .8s cubic-bezier(.68,-.55,.265,1.55);
+}
+
+@keyframes spring-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(.8);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===============================
+   PARALLAX VARIABLES
+================================ */
+
+.index-page .obsidian-gradient {
+  --gradient-x: 20%;
+  --gradient-y: 20%;
+  --gradient-x2: 80%;
+  --gradient-y2: 60%;
+  --gradient-x3: 40%;
+  --gradient-y3: 80%;
+}
+
+.index-page .obsidian-gradient::before {
+  background:
+    radial-gradient(circle at var(--gradient-x, 20%) var(--gradient-y, 20%), rgba(237,152,95,.08), transparent 50%),
+    radial-gradient(circle at var(--gradient-x2, 80%) var(--gradient-y2, 60%), rgba(237,152,95,.05), transparent 50%),
+    radial-gradient(circle at var(--gradient-x3, 40%) var(--gradient-y3, 80%), rgba(247,185,128,.06), transparent 50%);
+  transition: background .3s ease;
+}
+
