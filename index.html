@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Fatigue Killer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#ED985F',secondary:'#F7B980'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="obsidian-gradient min-h-screen">
+<header class="w-full glass-header sticky top-0 z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary cursor-pointer">Fatigue Killer</a>
+<nav class="hidden md:flex items-center justify-center flex-1 mx-10">
+<a href="#" class="mx-6 text-[#E6E6E6]/70 hover:text-primary transition-colors cursor-pointer text-light">Home</a>
+<a href="#selection" class="mx-6 text-[#E6E6E6]/70 hover:text-primary transition-colors cursor-pointer text-light">Features</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="auth.html" class="login-link text-primary font-semibold text-base cursor-pointer">Log in</a>
+<a href="auth.html#signup" class="pill-button cursor-pointer whitespace-nowrap">Sign Up</a>
+</div>
+</div>
+</header>
+<section id="home" class="min-h-screen flex items-center justify-center py-20 relative">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h1 class="text-5xl md:text-7xl font-thin text-[#E6E6E6] mb-6 leading-tight">
+Decision Fatigue Section
+</h1>
+<p class="text-xl md:text-2xl text-[#E6E6E6]/70 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+Stop endless scrolling. We curate the perfect choice for you, so you can focus on experiencing instead of deciding.
+</p>
+<a href="#selection" class="inline-block bg-gradient-to-r from-[#F7B980]/40 to-[#E6E6E6]/30 backdrop-blur-sm border border-[#F7B980]/50 text-[#001F3D] px-10 py-5 text-lg font-light hover:from-[#F7B980]/60 hover:to-[#E6E6E6]/40 transition-all duration-300 cursor-pointer whitespace-nowrap rounded-2xl shadow-lg hover:shadow-xl">
+Continue
+</a>
+</div>
+</div>
+</section>
+<section id="selection" class="min-h-screen py-20 relative glass-header">
+<div class="container mx-auto px-6">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-thin text-[#E6E6E6] mb-6">The Selection Grid</h2>
+<p class="text-xl text-[#E6E6E6]/60 font-light">Three simple steps. One perfect choice.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="glass-panel p-10 panel-blur">
+<div class="text-center mb-8">
+<span class="text-6xl font-thin text-primary/40">01</span>
+<h3 class="text-2xl font-light text-[#E6E6E6] mt-4">Pick a Vibe</h3>
+</div>
+<div class="mood-orb-container">
+<div class="mood-orb active melancholy" data-mood="melancholy">
+<div class="mood-orb-label">Melancholy</div>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-3 mt-4">
+<button class="mood-option p-4 text-center rounded-lg transition-all duration-300 active" data-mood="melancholy">
+<i class="ri-cloud-line ri-2x text-primary block"></i>
+<span class="mood-label">Melancholy</span>
+</button>
+<button class="mood-option p-4 text-center rounded-lg transition-all duration-300" data-mood="high-energy">
+<i class="ri-flashlight-line ri-2x text-primary block"></i>
+<span class="mood-label">High Energy</span>
+</button>
+<button class="mood-option p-4 text-center rounded-lg transition-all duration-300" data-mood="zen">
+<i class="ri-leaf-line ri-2x text-primary block"></i>
+<span class="mood-label">Zen</span>
+</button>
+<button class="mood-option p-4 text-center rounded-lg transition-all duration-300" data-mood="curious">
+<i class="ri-search-eye-line ri-2x text-primary block"></i>
+<span class="mood-label">Curious</span>
+</button>
+<button class="mood-option p-4 text-center rounded-lg transition-all duration-300" data-mood="thrill-seeker">
+<i class="ri-rocket-line ri-2x text-primary block"></i>
+<span class="mood-label">Thrill-Seeker</span>
+</button>
+</div>
+</div>
+<div class="glass-panel p-10 panel-blur">
+<div class="text-center mb-8">
+<span class="text-6xl font-thin text-primary/40">02</span>
+<h3 class="text-2xl font-light text-[#E6E6E6] mt-4">Pick a Path</h3>
+</div>
+<div class="space-y-4">
+<button class="path-button w-full p-6 text-center active">
+<i class="ri-film-line ri-2x text-primary mb-3 w-8 h-8 flex items-center justify-center mx-auto"></i>
+<span class="block text-lg font-light">Cinema</span>
+</button>
+<button class="path-button w-full p-6 text-center">
+<i class="ri-book-open-line ri-2x mb-3 w-8 h-8 flex items-center justify-center mx-auto"></i>
+<span class="block text-lg font-light">Literature</span>
+</button>
+<button class="path-button w-full p-6 text-center">
+<i class="ri-restaurant-line ri-2x mb-3 w-8 h-8 flex items-center justify-center mx-auto"></i>
+<span class="block text-lg font-light">Culinary</span>
+</button>
+</div>
+</div>
+<div class="glass-panel p-10">
+<div class="text-center mb-8">
+<span class="text-6xl font-thin text-primary/40">03</span>
+<h3 class="text-2xl font-light text-white mt-4">Commit</h3>
+</div>
+<div class="flex flex-col items-center justify-center h-64">
+<button class="destiny-button pulse-glow neon-glow" id="destinyButton">
+<span class="button-text">
+<i class="ri-compass-discover-line ri-xl mr-4 w-6 h-6 flex items-center justify-center inline-flex"></i>
+Reveal My Destiny
+</span>
+<span class="spinner"></span>
+<span class="calculating-text" style="display: none;">Calculating...</span>
+</button>
+<p class="text-[#E6E6E6]/40 text-sm mt-6 font-light">One choice. No regrets.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="relative min-h-screen flex items-center justify-center pt-20 pb-8">
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<h1 class="text-5xl md:text-7xl font-thin text-[#E6E6E6] mb-8 leading-tight tracking-wide">
+Stop Searching.<br>
+<span class="text-primary font-light">Start Discovering.</span>
+</h1>
+<p class="text-2xl md:text-3xl text-[#E6E6E6]/80 mb-12 font-light max-w-3xl mx-auto leading-relaxed">
+The internet is infinite. Your time isn't. We pick the best, so you don't have to.
+</p>
+<a href="#selection" class="inline-block bg-gradient-to-r from-[#F7B980]/40 to-[#E6E6E6]/30 backdrop-blur-sm border border-[#F7B980]/50 text-[#001F3D] px-12 py-6 text-xl font-light hover:from-[#F7B980]/60 hover:to-[#E6E6E6]/40 transition-all duration-300 cursor-pointer whitespace-nowrap rounded-2xl shadow-lg hover:shadow-xl">
+Begin Your Journey
+</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="glass-header mt-auto pt-16 pb-8 border-t border-primary/20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<p class="text-[#E6E6E6]/60 text-lg font-thin mb-8">One choice. No regrets. Reset in 24 hours.</p>
+<a href="#" class="text-3xl font-['Pacifico'] text-primary mb-8 inline-block cursor-pointer">Fatigue Killer</a>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="flex space-x-8 mb-6 md:mb-0">
+<a href="#" class="text-[#E6E6E6]/50 hover:text-primary text-sm cursor-pointer text-light transition-colors">About</a>
+<a href="#" class="text-[#E6E6E6]/50 hover:text-primary text-sm cursor-pointer text-light transition-colors">Methodology</a>
+<a href="#" class="text-[#E6E6E6]/50 hover:text-primary text-sm cursor-pointer text-light transition-colors">GitHub</a>
+</div>
+<p class="text-[#E6E6E6]/30 text-sm font-thin">© 2025 Designed by: <a href="https://thana-abdulhalim.netlify.app" target="_blank">THANA</a>.</p>
+</div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

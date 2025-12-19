@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In - Fatigue Killer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#ED985F',secondary:'#F7B980'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="obsidian-gradient min-h-screen">
+<div class="page-transition-overlay"></div>
+<header class="w-full glass-header sticky top-0 z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico'] text-primary cursor-pointer">Fatigue Killer</a>
+<nav class="hidden md:flex items-center justify-center flex-1 mx-10">
+<a href="index.html" class="mx-6 text-[#E6E6E6]/70 hover:text-primary transition-colors cursor-pointer text-light">Home</a>
+<a href="index.html#selection" class="mx-6 text-[#E6E6E6]/70 hover:text-primary transition-colors cursor-pointer text-light">Features</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="login.html" class="login-link text-primary font-semibold text-base cursor-pointer">Log in</a>
+<a href="signup.html" class="pill-button cursor-pointer whitespace-nowrap switch-page">Sign Up</a>
+</div>
+</div>
+</header>
+
+<section class="min-h-screen flex items-center justify-center py-20 relative">
+<div class="container mx-auto px-6">
+<div class="max-w-md mx-auto">
+<div class="auth-container glass-panel p-8 md:p-10">
+<div class="text-center mb-8">
+<h1 class="text-4xl font-thin text-[#E6E6E6] mb-2">Welcome Back</h1>
+<p class="text-[#E6E6E6]/60 text-sm font-light">Sign in to continue your journey</p>
+</div>
+
+<form id="loginForm" class="auth-form">
+<div class="space-y-5">
+<div class="form-group">
+<label class="block text-[#E6E6E6]/70 text-sm mb-2 font-light">Email</label>
+<input type="email" class="form-input" placeholder="your@email.com" required>
+</div>
+<div class="form-group">
+<label class="block text-[#E6E6E6]/70 text-sm mb-2 font-light">Password</label>
+<input type="password" class="form-input" placeholder="Enter your password" required>
+</div>
+<div class="flex items-center justify-between text-sm">
+<label class="flex items-center text-[#E6E6E6]/60 font-light cursor-pointer">
+<input type="checkbox" class="mr-2">
+Remember me
+</label>
+<a href="#" class="text-primary hover:text-[#F7B980] transition-colors font-light">Forgot password?</a>
+</div>
+<button type="submit" class="auth-submit-btn w-full">
+Log In
+</button>
+</div>
+</form>
+
+<div class="mt-6 text-center">
+<p class="text-[#E6E6E6]/60 text-sm font-light">
+Don't have an account? 
+<a href="signup.html" class="text-primary hover:text-[#F7B980] transition-colors font-light switch-page ml-1">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script src="script.js"></script>
+<script src="auth-transitions.js"></script>
+</body>
+</html>
+
